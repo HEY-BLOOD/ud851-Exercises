@@ -15,9 +15,12 @@
  */
 package com.example.android.datafrominternet.utilities;
 
+import android.net.Uri;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -45,8 +48,19 @@ public class NetworkUtils {
      * @return The URL to use to query the GitHub server.
      */
     public static URL buildUrl(String githubSearchQuery) {
-        // TODO (1) Fill in this method to build the proper GitHub query URL
-        return null;
+        // COMPLETED (1) Fill in this method to build the proper GitHub query URL
+        Uri.Builder uriBuilder = Uri.parse(GITHUB_BASE_URL).buildUpon();
+        uriBuilder.appendQueryParameter(PARAM_QUERY, githubSearchQuery);
+        uriBuilder.appendQueryParameter(PARAM_SORT, sortBy);
+        Uri uri = uriBuilder.build();
+
+        URL url = null;
+        try {
+            url = new URL(uri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return url;
     }
 
     /**
