@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        // COMPLETED (3) Add the ON_DESTROY String to the front of mLifecycleCallbacks
+        // COMPLETED (3) Add the ON_DESTROY String to the front of mLif ecycleCallbacks
         mLifecycleCallbacks.add(0, ON_DESTROY);
 
         logAndAppend(ON_DESTROY);
