@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This is called from the layout when the button is clicked and switches between the
      * two app states.
+     *
      * @param view The view that was clicked
      */
     public void onButtonClick(View view) {
