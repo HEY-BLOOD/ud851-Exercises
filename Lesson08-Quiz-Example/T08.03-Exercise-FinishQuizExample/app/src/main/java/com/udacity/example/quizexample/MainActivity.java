@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     // The current state of the app
     private int mCurrentState;
 
-    // TODO (1) You'll probably want more than just the Button
+    // COMPLETED (1) You'll probably want more than just the Button
     private Button mButton;
     private TextView mDefinitionTextView;
     private TextView mWordTextView;
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         // Change button text
         mButton.setText(getString(R.string.show_definition));
 
-        // TODO (3) Go to the next word in the Cursor, show the next word and hide the definition
+        // COMPLETED (3) Go to the next word in the Cursor, show the next word and hide the definition
         if (mData != null) {
             // Move to the next position in the cursor, if there isn't one, move to the first
             if (!mData.moveToNext()) {
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showDefinition() {
 
-        // TODO (4) Show the definition
+        // COMPLETED (4) Show the definition
         if (mData != null) {
             // Show the definition TextView
             mDefinitionTextView.setVisibility(View.VISIBLE);
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // TODO (5) Remember to close your cursor!
+        // COMPLETED (5) Remember to close your cursor!
         mData.close();
     }
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
             // Set the data for MainActivity
             mData = cursor;
 
-            // TODO (2) Initialize anything that you need the cursor for, such as setting up
+            // COMPLETED (2) Initialize anything that you need the cursor for, such as setting up
             // the screen with the first word and setting any other instance variables
             // Get the column index, in the Cursor, of each piece of data
             mDefCol = mData.getColumnIndex(DroidTermsExampleContract.COLUMN_DEFINITION);
