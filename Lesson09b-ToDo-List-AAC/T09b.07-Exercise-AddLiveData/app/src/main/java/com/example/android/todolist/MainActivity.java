@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
                 mAdapter.setTasks(taskEntries);
             }
         });
-
     }
 
     @Override
